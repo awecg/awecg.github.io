@@ -10,7 +10,7 @@
   
   <title>
     
-      About | 666
+      666
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -111,57 +111,88 @@
   </div>
 </header>
 
-    <div id="about-banner" style="background-image: url(https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1514889707&di=275e0bf21d66af2bd04595ab784921be&src=http://img5.duitang.com/uploads/item/201307/24/20130724161744_RSGTm.jpeg)"></div>
-<div class="author">
-  <div class="head">
-    <img src="https://avatars2.githubusercontent.com/u/34963822?s=400&u=f1a4b09175b9f875afea70deb35d69a4502192c3&v=4" />
-  </div>
-  <h3>awecg</h3>
-  <p class="discription">Grow strong</p>
-  <section class="share-icons">
-    
-    
-    
-      <a class="icon-github" href="https://github.com/benleie" target="_blank">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-    
-    
-      <a class="icon-zhihu" href="https://www.zhihu.com/people/胜七" target="_blank">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-stack-1x fa-inverse">知</i>
-        </span>
-      </a>
-    
-    
-        <a class="icon-douban" href="https://www.douban.com/people/我才不要早起呢" target="_blank">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-stack-1x fa-inverse">豆</i>
-            </span>
-        </a>
-    
-  </section>
+    <div id="article-banner">
+  <h2>Archives</h2>
+  <p class="post-date">文章归档</p>
 </div>
+<main class="app-body" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/01/02/semantic/" class="archive-title"></a>
+        <p class="archive-date">01-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/01/02/mongoDB/" class="archive-title"></a>
+        <p class="archive-date">01-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/01/02/gitbash/" class="archive-title"></a>
+        <p class="archive-date">01-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/01/02/elementUI/" class="archive-title"></a>
+        <p class="archive-date">01-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/01/02/echarts/" class="archive-title"></a>
+        <p class="archive-date">01-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/01/02/bootstrap/" class="archive-title"></a>
+        <p class="archive-date">01-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/01/02/ajax/" class="archive-title"></a>
+        <p class="archive-date">01-02</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2017
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2017/12/31/hexo/" class="archive-title">again</a>
+        <p class="archive-date">12-31</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/12/31/hello-world/" class="archive-title">Hello World</a>
+        <p class="archive-date">12-31</p>
+      </div>
+    
+  </div>
+</section>
+  
+</main>
 
 <script>
   (function () {
-    $('.header').removeClass('fixed-header')
-    var windowH = $(window).height();
-    var author = $('.author')
-    var bodyH = author.offset().top + author[0].offsetHeight + 71;
-    if (bodyH < windowH) {
-      author.css({
-        'margin-bottom': windowH - bodyH
-      })
-    }
+    var url = '//awecg.github.io/blog/archives/2018/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
   })();
 </script>
-
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

@@ -10,7 +10,7 @@
   
   <title>
     
-      again | 666
+      666
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,8 +112,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>again</h2>
-  <p class="post-date">2017-12-31</p>
+  <h2></h2>
+  <p class="post-date">2018-01-02</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,14 +121,16 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>再次配置hexo.<br>安装hexo-deploy-git后，created a lockfile as package-lock.json. You should commit this file？？</p>
-<ul>
-<li>当我把config中的url的root设为空时，<code>Cannot read property &#39;replace&#39; of null</code>hexo\lib\hexo\load_config.js:34:30.原来是这玩意儿在解释YHML。</li>
-</ul>
-<h3 id="问题很多"><a href="#问题很多" class="headerlink" title="问题很多"></a>问题很多</h3><ul>
-<li>github显示还是benleie在提交这个项目？？</li>
-<li>如何设置url的root，让它成功到blog文件夹。</li>
-</ul>
+    <section class="markdown-content"><p>用mongod 运行数据库，–dbpath,–port是常用参数。默认是27017<br>可以用原生的MongoDB Shell操作数据库，也可以用STUDIO 3t这样的可视化界面。</p>
+<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>用Ctrl+L或者cls命令来清屏</p>
+<p>文档 集合 数据库<br>db.runoob.insert({‘name’:”tutorial”})<br>db.col.insert()<br>删除集合<br>show tables<br>db.XXX.drop()</p>
+<p>显示集合<br> db.col.find().pretty()</p>
+<p>更新集合文档<br> db.col.update({‘title’:’MongoDB 教程’},{$set:{‘title’:’MongoDB’}},{multi:true})</p>
+<p>删除文档<br> db.col.remove({‘title’:’MongoDB 教程’},1)</p>
+<p>条件操作符  $type操作符</p>
+<p>limit和skip方法<br>db.col.find().limit(2)  得到col集合的前两条文档</p>
+<p>db.col.find().count()</p>
+<p>db.col.find({}).limit(1)</p>
 </section>
     <!-- Tags START -->
     
@@ -174,7 +176,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#问题很多"><span class="toc-nav-text">问题很多</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#shell"><span class="toc-nav-text">shell</span></a></li></ol>
     
   </div>
 </aside>
@@ -184,7 +186,7 @@
 
 <script>
   (function () {
-    var url = '//awecg.github.io/blog/2017/12/31/hexo/';
+    var url = '//awecg.github.io/blog/2018/01/02/mongoDB/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -240,7 +242,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "again",
+        id: "",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {

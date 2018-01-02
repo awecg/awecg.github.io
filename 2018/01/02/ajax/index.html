@@ -10,7 +10,7 @@
   
   <title>
     
-      again | 666
+      666
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,8 +112,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>again</h2>
-  <p class="post-date">2017-12-31</p>
+  <h2></h2>
+  <p class="post-date">2018-01-02</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,13 +121,12 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>再次配置hexo.<br>安装hexo-deploy-git后，created a lockfile as package-lock.json. You should commit this file？？</p>
+    <section class="markdown-content"><p>关于ajax，json的后端数据处理。</p>
 <ul>
-<li>当我把config中的url的root设为空时，<code>Cannot read property &#39;replace&#39; of null</code>hexo\lib\hexo\load_config.js:34:30.原来是这玩意儿在解释YHML。</li>
+<li>ajax与HTTP请求的区别</li>
 </ul>
-<h3 id="问题很多"><a href="#问题很多" class="headerlink" title="问题很多"></a>问题很多</h3><ul>
-<li>github显示还是benleie在提交这个项目？？</li>
-<li>如何设置url的root，让它成功到blog文件夹。</li>
+<h3 id="JSON-server-superagent-axios的作用区别？"><a href="#JSON-server-superagent-axios的作用区别？" class="headerlink" title="JSON-server,superagent,axios的作用区别？"></a>JSON-server,superagent,axios的作用区别？</h3><ul>
+<li>axios:Promise based HTTP client for the browser and node.js<br>理由:jquery自3.0版本才支持Promise,如果你只是想使用jquery的ajax的话引入整个jquery是很大的负担，所以axios是一个很好的工具。(axios代码量只有jquery的十分之一，减少执行时间)。同时提供了其他features。</li>
 </ul>
 </section>
     <!-- Tags START -->
@@ -174,7 +173,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#问题很多"><span class="toc-nav-text">问题很多</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JSON-server-superagent-axios的作用区别？"><span class="toc-nav-text">JSON-server,superagent,axios的作用区别？</span></a></li></ol>
     
   </div>
 </aside>
@@ -184,7 +183,7 @@
 
 <script>
   (function () {
-    var url = '//awecg.github.io/blog/2017/12/31/hexo/';
+    var url = '//awecg.github.io/blog/2018/01/02/ajax/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -240,7 +239,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "again",
+        id: "",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {

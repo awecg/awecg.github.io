@@ -10,7 +10,7 @@
   
   <title>
     
-      again | 666
+      666
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,8 +112,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>again</h2>
-  <p class="post-date">2017-12-31</p>
+  <h2></h2>
+  <p class="post-date">2018-01-02</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,14 +121,20 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>再次配置hexo.<br>安装hexo-deploy-git后，created a lockfile as package-lock.json. You should commit this file？？</p>
-<ul>
-<li>当我把config中的url的root设为空时，<code>Cannot read property &#39;replace&#39; of null</code>hexo\lib\hexo\load_config.js:34:30.原来是这玩意儿在解释YHML。</li>
+    <section class="markdown-content"><h3 id="git-clone指定分支"><a href="#git-clone指定分支" class="headerlink" title="git clone指定分支"></a>git clone指定分支</h3><p>git clone -b refactor <a href="https://github.com/maroslaw/rainyday.js.git" target="_blank" rel="noopener">https://github.com/maroslaw/rainyday.js.git</a> stop</p>
+<p>##创建一个新库，很简单。<br>在官网new repo,然后github在你没有readme的时候会有提示页面，照做就行。<br>git init一下，在github网上 new repo，然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# awecg.github.io&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/awecg/awecg.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p>另:git pull –rebase origin master(如果创建库时生成了README.md，即README.md不在本地文件目录)</p>
+<h2 id="使用多个git账号"><a href="#使用多个git账号" class="headerlink" title="使用多个git账号"></a>使用多个git账号</h2><ul>
+<li>创建公钥和密钥<code>ssh-keygen -t rsa -f test -C &quot;test key&quot;</code>创建公钥和密钥</li>
+<li>$ ssh-agent bash<br>  $  ssh-add ~/.ssh/test<br>  Identity added: /c/Users/我/.ssh/test (/c/Users/我/.ssh/test)</li>
+<li><p>配置ssh的config文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi Benleie! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git remote set-url origin</p>
+</li>
+<li>git push -u origin master</li>
 </ul>
-<h3 id="问题很多"><a href="#问题很多" class="headerlink" title="问题很多"></a>问题很多</h3><ul>
-<li>github显示还是benleie在提交这个项目？？</li>
-<li>如何设置url的root，让它成功到blog文件夹。</li>
-</ul>
+<p>查看gitconfig   git config –list<br>查看远程仓库信息  git remote show origin<br>查看远程仓库 git remote -v<br>commit阅读利器gitk</p>
 </section>
     <!-- Tags START -->
     
@@ -174,7 +180,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#问题很多"><span class="toc-nav-text">问题很多</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git-clone指定分支"><span class="toc-nav-text">git clone指定分支</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用多个git账号"><span class="toc-nav-text">使用多个git账号</span></a>
     
   </div>
 </aside>
@@ -184,7 +190,7 @@
 
 <script>
   (function () {
-    var url = '//awecg.github.io/blog/2017/12/31/hexo/';
+    var url = '//awecg.github.io/blog/2018/01/02/gitbash/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -240,7 +246,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "again",
+        id: "",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
