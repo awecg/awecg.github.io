@@ -112,44 +112,178 @@
 </header>
 
     <div id="article-banner">
-  <h2>Tags</h2>
-  <p class="post-date">标签检索</p>
+  <h2>bootstrap</h2>
+  <p class="post-date">2018-01-02</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
 </div>
-<main class="app-body">
-  <div id="tag-cloud">
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><ul>
+<li>modal如何显示在屏幕正中心？</li>
+</ul>
+<h2 id="简书"><a href="#简书" class="headerlink" title="简书"></a>简书</h2><ul>
+<li>tooltip，只有一个左下角方向的显示??<code>$(&#39;[data-toggle=&quot;tooltip&quot;]&#39;).tooltip(&#39;show&#39;)</code>,发现压根就没有激活.</li>
+<li>如果没有data-placement，默认top;如果data-placement为””,默认right?</li>
+<li>tooltip的字体大小，背景颜色。。</li>
+<li><strong>@link-hover-color</strong>   style标签的a:hover不能改变navbar-nav里a的背景颜色，只能用JS改变inline-style了。</li>
+<li>rgba(0,0,0,.65) opacity;</li>
+<li>calc(100% - 85px)</li>
+<li>无法用%设置textarea的height,无论是style标签还是js。</li>
+<li>textarea下面莫名其妙留出一段空白。display：block；</li>
+</ul>
+<h2 id="试着用carousel做轮播图。"><a href="#试着用carousel做轮播图。" class="headerlink" title="试着用carousel做轮播图。"></a>试着用carousel做轮播图。</h2><ul>
+<li>carousel-indicators完全没用是吧？</li>
+<li>用<code>img {height:400px}</code>无法修改图片大小，可能bootstrap做了优先级更高的imporant的设置吧。如何解决图片大小适应问题？</li>
+</ul>
+<p>鼠标悬停会影响轮播；</p>
+</section>
+    <!-- Tags START -->
     
-      <a class="tag0" data-name="tag-UI">UI</a>
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#UI" >
+    <span class="tag-code">UI</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#简书"><span class="toc-nav-text">简书</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#试着用carousel做轮播图。"><span class="toc-nav-text">试着用carousel做轮播图。</span></a></li></ol>
     
   </div>
+</aside>
   
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-UI">UI</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/01/02/semantic/">sematic</a>
-          </li>
-        </ul>
-        
-    </div>
-    
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
-    var url = '//awecg.github.io/blog/2018/01/02/bootstrap/'
-    $('#article-banner').geopattern(url)
+    var url = '//awecg.github.io/blog/2018/01/02/bootstrap/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
     $('.header').removeClass('fixed-header')
 
-    var tag = location.hash.replace('#', '')
-    if (tag) {
-      var tagId = "#tag-" + tag;
-      $("html, body").animate({
-        scrollTop: $(tagId).offset().top 
-      }, 400)
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "bootstrap",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
     }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
