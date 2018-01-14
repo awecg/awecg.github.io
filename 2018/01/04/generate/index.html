@@ -10,7 +10,7 @@
   
   <title>
     
-      again | 666
+      generate | 666
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,8 +112,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>again</h2>
-  <p class="post-date">2017-12-31</p>
+  <h2>generate</h2>
+  <p class="post-date">2018-01-04</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,17 +121,35 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>再次配置hexo.<br>安装hexo-deploy-git后，created a lockfile as package-lock.json. You should commit this file。<br>这是npm模仿yarn的版本锁定，可以还原开发环境。</p>
-<ul>
-<li>当我把config中的url的root设为空时，<code>Cannot read property &#39;replace&#39; of null</code>hexo\lib\hexo\load_config.js:34:30.原来是这玩意儿在解释YHML，加载配置。</li>
-<li>github显示还是benleie在提交这个项目？？<br>修改config的用户名解决</li>
-<li>如何设置url的root，让它成功到blog目录？？<br>新建一个库,开启github pages即可。<h3 id="问题很多"><a href="#问题很多" class="headerlink" title="问题很多"></a>问题很多</h3></li>
+    <section class="markdown-content"><h2 id="hexo-generate过程"><a href="#hexo-generate过程" class="headerlink" title="hexo generate过程"></a>hexo generate过程</h2><ul>
+<li>hexo-fs是自己定义的file库</li>
+<li>hexo-util   CacheStream()</li>
 </ul>
-<ul>
-<li><p>hexo加载了hexo-renderer-stylus模块来编译CSS，但是yilia使用了SCSS??</p>
-</li>
-<li><p>generator产生的html文件是lunix的LF格式？？</p>
-</li>
+<p>hexo/extend<br>hexo/plugins<br>hexo-renderer-ejs   ejs</p>
+<p>cwd当前目录</p>
+<h2 id="构造函数们"><a href="#构造函数们" class="headerlink" title="构造函数们"></a>构造函数们</h2><h4 id="Console"><a href="#Console" class="headerlink" title="Console()"></a>Console()</h4><ul>
+<li>hexo-cli/lib/extend/console</li>
+<li>this —store,alias</li>
+<li>prototype — get,list,register</li>
+<li>hexo.extend.console</li>
+</ul>
+<h4 id="Box"><a href="#Box" class="headerlink" title="Box()"></a>Box()</h4><ul>
+<li>EventEmitter.call(this);</li>
+<li>require(‘util’).inherits(Box, EventEmitter);</li>
+</ul>
+<h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo()"></a>Hexo()</h4><ul>
+<li>hexo.log.debug/info<h6 id="this"><a href="#this" class="headerlink" title="this"></a>this</h6></li>
+<li>this.source = new Source(this)    继承BOX</li>
+<li>this.theme  | this.locals<h6 id="init"><a href="#init" class="headerlink" title="init()"></a>init()</h6></li>
+<li>require(‘../plugins/console’)(this);这样加载六大插件</li>
+<li>调用load_config,load_plugins，update_package，然后execFilter(‘after_init’,…)  this.extend.filter</li>
+<li>emit(“ready”)<h6 id="load"><a href="#load" class="headerlink" title="load()"></a>load()</h6>一切plugins和extend都加载好后</li>
+<li>loadDatabase    hexo.database  .options .load()</li>
+<li>self.source.process(), self.theme.process()</li>
+</ul>
+<h6 id="Hexo-prototype-generate"><a href="#Hexo-prototype-generate" class="headerlink" title="Hexo.prototype._generate()"></a><code>Hexo.prototype._generate()</code></h6><ul>
+<li>emit – generateBefore | generateAfter</li>
+<li>return self.execFilter(‘after_generate’, null, {context: self});</li>
 </ul>
 </section>
     <!-- Tags START -->
@@ -141,10 +159,6 @@
         
   <a href="/tags#hexo" >
     <span class="tag-code">hexo</span>
-  </a>
-
-  <a href="/tags#node.js" >
-    <span class="tag-code">node.js</span>
   </a>
 
       </div>
@@ -191,7 +205,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#问题很多"><span class="toc-nav-text">问题很多</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#hexo-generate过程"><span class="toc-nav-text">hexo generate过程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#构造函数们"><span class="toc-nav-text">构造函数们</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Console"><span class="toc-nav-text">Console()</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Box"><span class="toc-nav-text">Box()</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Hexo"><span class="toc-nav-text">Hexo()</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#this"><span class="toc-nav-text">this</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#init"><span class="toc-nav-text">init()</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#load"><span class="toc-nav-text">load()</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#Hexo-prototype-generate"><span class="toc-nav-text">Hexo.prototype._generate()</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     
   </div>
 </aside>
@@ -201,7 +215,7 @@
 
 <script>
   (function () {
-    var url = '//awecg.github.io/blog/2017/12/31/hexo/';
+    var url = '//awecg.github.io/blog/2018/01/04/generate/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -257,7 +271,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "again",
+        id: "generate",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
