@@ -134,7 +134,12 @@
 </li>
 <li>git push -u origin master</li>
 </ul>
-<p>查看gitconfig   git config –list<br>查看远程仓库信息  git remote show origin<br>查看远程仓库 git remote -v<br>commit阅读利器gitk</p>
+<p>查看gitconfig   git config –list<br>查看远程仓库信息  git remote show origin<br>查看远程仓库 git remote -v</p>
+<h2 id="The-file-will-have-its-original-line-endings-in-your-working-directory"><a href="#The-file-will-have-its-original-line-endings-in-your-working-directory" class="headerlink" title="The file will have its original line endings in your working directory."></a>The file will have its original line endings in your working directory.</h2><ul>
+<li>关于autocrlf。windows系统下，如果git add提交到stage的文件时unix格式，就有上面的提示。<br>意思是core.autocrlf默认为true，提交到index后会自动转为lf endings，方便项目跨平台使用。</li>
+<li>权宜之计：为了git bash不被这种提示刷屏，可以将true改为false，反正只是在windows下自己玩。</li>
+</ul>
+<p>commit阅读利器gitk</p>
 </section>
     <!-- Tags START -->
     
@@ -193,7 +198,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git-clone指定分支"><span class="toc-nav-text">git clone指定分支</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用多个git账号"><span class="toc-nav-text">使用多个git账号</span></a>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git-clone指定分支"><span class="toc-nav-text">git clone指定分支</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用多个git账号"><span class="toc-nav-text">使用多个git账号</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-file-will-have-its-original-line-endings-in-your-working-directory"><span class="toc-nav-text">The file will have its original line endings in your working directory.</span></a>
     
   </div>
 </aside>
@@ -204,7 +209,7 @@
 <script>
   (function () {
     var url = '//awecg.github.io/blog/2018/01/02/gitbash/';
-    var banner = ''
+    var banner = 'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png'
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
         'background-image': 'url(' + banner + ')'
