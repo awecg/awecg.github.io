@@ -10,7 +10,7 @@
   
   <title>
     
-      gitbash | 666
+      正则实操 | 666
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,8 +112,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>gitbash</h2>
-  <p class="post-date">2018-01-02</p>
+  <h2>正则实操</h2>
+  <p class="post-date">2018-01-14</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,40 +121,22 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="git-clone指定分支"><a href="#git-clone指定分支" class="headerlink" title="git clone指定分支"></a>git clone指定分支</h3><p>git clone -b refactor <a href="https://github.com/maroslaw/rainyday.js.git" target="_blank" rel="noopener">https://github.com/maroslaw/rainyday.js.git</a> stop</p>
-<h3 id="创建一个新库，很简单。"><a href="#创建一个新库，很简单。" class="headerlink" title="创建一个新库，很简单。"></a>创建一个新库，很简单。</h3><p>在官网new repo,然后github在你没有readme的时候会有提示页面，照做就行。<br>git init一下，在github网上 new repo，然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# awecg.github.io&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/awecg/awecg.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
-<p>另:git pull –rebase origin master(如果创建库时生成了README.md，即README.md不在本地文件目录)</p>
-<h2 id="使用多个git账号"><a href="#使用多个git账号" class="headerlink" title="使用多个git账号"></a>使用多个git账号</h2><ul>
-<li>创建公钥和密钥<code>ssh-keygen -t rsa -f test -C &quot;test key&quot;</code>创建公钥和密钥</li>
-<li>$ ssh-agent bash<br>  $  ssh-add ~/.ssh/test<br>  Identity added: /c/Users/我/.ssh/test (/c/Users/我/.ssh/test)</li>
-<li><p>配置ssh的config文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi Benleie! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git remote set-url origin</p>
-</li>
-<li>git push -u origin master</li>
-</ul>
-<p>查看gitconfig   git config –list<br>查看远程仓库信息  git remote show origin<br>查看远程仓库 git remote -v</p>
-<h2 id="AUTOCRLF"><a href="#AUTOCRLF" class="headerlink" title="AUTOCRLF"></a>AUTOCRLF</h2><ul>
-<li><p>warning: LF will be replaced by CRLF in XXXXX.<br>The file will have its original line endings in your working directory.</p>
-</li>
-<li><p>关于autocrlf。windows系统下，如果git add提交到stage的文件时unix格式，就有上面的提示。<br>意思是core.autocrlf默认为true，提交到index后会自动转为lf endings，方便项目跨平台使用。</p>
-</li>
-<li>权宜之计：为了git bash不被这种提示刷屏，可以将true改为false，反正只是在windows下自己玩。</li>
-</ul>
-<p>commit阅读利器gitk</p>
+    <section class="markdown-content"><h3 id="筛选时间显示"><a href="#筛选时间显示" class="headerlink" title="筛选时间显示"></a>筛选时间显示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().toString()  <span class="comment">//Sat Sep 23 2017 09:45:01 GMT+0800 (中国标准时间)</span></span><br><span class="line">	<span class="keyword">let</span> left = <span class="regexp">/2017\s/</span>,</span><br><span class="line">		right = <span class="regexp">/GMT/</span>;</span><br><span class="line">	left.exec(now)</span><br><span class="line">	now = <span class="built_in">RegExp</span>.rightContext;    <span class="comment">//09:45:01 GMT+0800 (中国标准时间)</span></span><br><span class="line">	right.exec(now)</span><br><span class="line">	cl(<span class="built_in">RegExp</span>.leftContext)    <span class="comment">//09:45:01</span></span><br><span class="line">&#125;</span><br><span class="line">showTime()</span><br></pre></td></tr></table></figure>
+<h3 id="统计字符串中数字出现的次数"><a href="#统计字符串中数字出现的次数" class="headerlink" title="统计字符串中数字出现的次数"></a>统计字符串中数字出现的次数</h3><p>筛选出数字组成新的字符串即可<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = str.replace(<span class="regexp">/[^\d]/g</span>,<span class="string">''</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="搜索带pen的字符串-除了open"><a href="#搜索带pen的字符串-除了open" class="headerlink" title="搜索带pen的字符串,除了open."></a>搜索带pen的字符串,除了open.</h3><h3 id="求上一级目录。"><a href="#求上一级目录。" class="headerlink" title="求上一级目录。"></a>求上一级目录。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="string">"D:\\learnByDo\\awecg.github.io\\blog\\themes\\landscape"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(path.replace(<span class="regexp">/[^\\]+$/</span>,<span class="string">""</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="使用正则将字符串首字母转为大写"><a href="#使用正则将字符串首字母转为大写" class="headerlink" title="使用正则将字符串首字母转为大写"></a>使用正则将字符串首字母转为大写</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"she sells seashells and so on"</span>.replace(<span class="regexp">/\b\w/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params">word</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> word.toUpperCase()</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#git" >
-    <span class="tag-code">git</span>
+  <a href="/tags#javascript" >
+    <span class="tag-code">javascript</span>
   </a>
 
-  <a href="/tags#instruction" >
-    <span class="tag-code">instruction</span>
+  <a href="/tags#regexp" >
+    <span class="tag-code">regexp</span>
   </a>
 
       </div>
@@ -201,7 +183,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git-clone指定分支"><span class="toc-nav-text">git clone指定分支</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#创建一个新库，很简单。"><span class="toc-nav-text">创建一个新库，很简单。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用多个git账号"><span class="toc-nav-text">使用多个git账号</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AUTOCRLF"><span class="toc-nav-text">AUTOCRLF</span></a>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#筛选时间显示"><span class="toc-nav-text">筛选时间显示</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#统计字符串中数字出现的次数"><span class="toc-nav-text">统计字符串中数字出现的次数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搜索带pen的字符串-除了open"><span class="toc-nav-text">搜索带pen的字符串,除了open.</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#求上一级目录。"><span class="toc-nav-text">求上一级目录。</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用正则将字符串首字母转为大写"><span class="toc-nav-text">使用正则将字符串首字母转为大写</span></a></li></ol>
     
   </div>
 </aside>
@@ -211,8 +193,8 @@
 
 <script>
   (function () {
-    var url = '//awecg.github.io/blog/2018/01/02/gitbash/';
-    var banner = 'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png'
+    var url = '//awecg.github.io/blog/2018/01/14/js/regexp-practice/';
+    var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
         'background-image': 'url(' + banner + ')'
@@ -267,7 +249,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "gitbash",
+        id: "正则实操",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {

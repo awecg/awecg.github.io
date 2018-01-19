@@ -10,7 +10,7 @@
   
   <title>
     
-      gitbash | 666
+      666
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,8 +112,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>gitbash</h2>
-  <p class="post-date">2018-01-02</p>
+  <h2></h2>
+  <p class="post-date">2018-01-18</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,43 +121,45 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="git-clone指定分支"><a href="#git-clone指定分支" class="headerlink" title="git clone指定分支"></a>git clone指定分支</h3><p>git clone -b refactor <a href="https://github.com/maroslaw/rainyday.js.git" target="_blank" rel="noopener">https://github.com/maroslaw/rainyday.js.git</a> stop</p>
-<h3 id="创建一个新库，很简单。"><a href="#创建一个新库，很简单。" class="headerlink" title="创建一个新库，很简单。"></a>创建一个新库，很简单。</h3><p>在官网new repo,然后github在你没有readme的时候会有提示页面，照做就行。<br>git init一下，在github网上 new repo，然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# awecg.github.io&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/awecg/awecg.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
-<p>另:git pull –rebase origin master(如果创建库时生成了README.md，即README.md不在本地文件目录)</p>
-<h2 id="使用多个git账号"><a href="#使用多个git账号" class="headerlink" title="使用多个git账号"></a>使用多个git账号</h2><ul>
-<li>创建公钥和密钥<code>ssh-keygen -t rsa -f test -C &quot;test key&quot;</code>创建公钥和密钥</li>
-<li>$ ssh-agent bash<br>  $  ssh-add ~/.ssh/test<br>  Identity added: /c/Users/我/.ssh/test (/c/Users/我/.ssh/test)</li>
-<li><p>配置ssh的config文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi Benleie! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git remote set-url origin</p>
-</li>
-<li>git push -u origin master</li>
+    <section class="markdown-content"><p>正则表达式作用：验证客户端输入<br>很好的学习网站 <a href="https://regexr.com/" target="_blank" rel="noopener">https://regexr.com/</a></p>
+<ul>
+<li>flags   g i m<br>+</li>
+<li>character classes, quantifiers, grouping, lookaheads, and backreferences 捕获</li>
 </ul>
-<p>查看gitconfig   git config –list<br>查看远程仓库信息  git remote show origin<br>查看远程仓库 git remote -v</p>
-<h2 id="AUTOCRLF"><a href="#AUTOCRLF" class="headerlink" title="AUTOCRLF"></a>AUTOCRLF</h2><ul>
-<li><p>warning: LF will be replaced by CRLF in XXXXX.<br>The file will have its original line endings in your working directory.</p>
+<table>
+<thead>
+<tr>
+<th>dog</th>
+<th>bird</th>
+<th>cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo</td>
+<td>foo</td>
+<td>foo</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>bar</td>
+<td>bar</td>
+</tr>
+<tr>
+<td>baz</td>
+<td>baz</td>
+<td>baz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="String-对象中的正则表达式方法"><a href="#String-对象中的正则表达式方法" class="headerlink" title="String 对象中的正则表达式方法"></a>String 对象中的正则表达式方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"This is Box. This is a box too"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str1.replace(<span class="regexp">/box/ig</span>,<span class="string">"Tom"</span>));</span><br><span class="line"><span class="built_in">console</span>.log(str1.match(<span class="regexp">/box/ig</span>))    <span class="comment">//[ 'Box', 'box' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/box/ig</span>.exec(str1))     <span class="comment">//[ 'Box', index: 8, input: 'This is Box. This is a box too' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(str1.search(<span class="regexp">/box/ig</span>))   <span class="comment">//8</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str1.split(<span class="regexp">/box/ig</span>))</span><br><span class="line"><span class="built_in">console</span>.log(str1.split(<span class="regexp">/ /ig</span>))</span><br><span class="line"><span class="built_in">console</span>.log(str1.split(<span class="string">" "</span>))</span><br><span class="line"><span class="comment">//都不改变str1</span></span><br></pre></td></tr></table></figure>
+<h2 id="Boundaries-Anchors"><a href="#Boundaries-Anchors" class="headerlink" title="Boundaries | Anchors"></a>Boundaries | Anchors</h2><ul>
+<li>^ $ b B<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/\w+$/gi</span>.exec(<span class="string">"she sells seashells"</span>))</span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/^\w+/gi</span>.exec(<span class="string">"she sells seashells"</span>))</span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/\b\w/g</span>.exec(<span class="string">"she sells seashells"</span>)) <span class="comment">//只能匹配第一个,即she,因为exec只找一个,此时建议用match</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"she sells seashells"</span>.match(<span class="regexp">/\b\w/g</span>))</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>关于autocrlf。windows系统下，如果git add提交到stage的文件时unix格式，就有上面的提示。<br>意思是core.autocrlf默认为true，提交到index后会自动转为lf endings，方便项目跨平台使用。</p>
-</li>
-<li>权宜之计：为了git bash不被这种提示刷屏，可以将true改为false，反正只是在windows下自己玩。</li>
 </ul>
-<p>commit阅读利器gitk</p>
+<h2 id="character-classes"><a href="#character-classes" class="headerlink" title="character classes"></a>character classes</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="string">"D:\\learnByDo\\awecg.github.io\\blog\\themes\\landscape"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(path.replace(<span class="regexp">/[^\\]+$/</span>,<span class="string">""</span>));</span><br></pre></td></tr></table></figure>
 </section>
     <!-- Tags START -->
-    
-      <div class="tags">
-        <span>Tags:</span>
-        
-  <a href="/tags#git" >
-    <span class="tag-code">git</span>
-  </a>
-
-  <a href="/tags#instruction" >
-    <span class="tag-code">instruction</span>
-  </a>
-
-      </div>
     
     <!-- Tags END -->
     <!-- 打赏 START -->
@@ -201,7 +203,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git-clone指定分支"><span class="toc-nav-text">git clone指定分支</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#创建一个新库，很简单。"><span class="toc-nav-text">创建一个新库，很简单。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用多个git账号"><span class="toc-nav-text">使用多个git账号</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AUTOCRLF"><span class="toc-nav-text">AUTOCRLF</span></a>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#String-对象中的正则表达式方法"><span class="toc-nav-text">String 对象中的正则表达式方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Boundaries-Anchors"><span class="toc-nav-text">Boundaries | Anchors</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#character-classes"><span class="toc-nav-text">character classes</span></a></li></ol>
     
   </div>
 </aside>
@@ -211,8 +213,8 @@
 
 <script>
   (function () {
-    var url = '//awecg.github.io/blog/2018/01/02/gitbash/';
-    var banner = 'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png'
+    var url = '//awecg.github.io/blog/2018/01/18/js/learnRegExp/';
+    var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
         'background-image': 'url(' + banner + ')'
@@ -267,7 +269,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "gitbash",
+        id: "",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
