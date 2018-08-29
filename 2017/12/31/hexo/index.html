@@ -10,7 +10,7 @@
   
   <title>
     
-      again | 666
+      again | 粗工
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
   <div class="header-container">
     <a class="home-link" href="/">
       <div class="logo"></div>
-      <span>666</span>
+      <span>粗工</span>
     </a>
     <ul class="right-list">
       
@@ -121,11 +121,18 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>再次配置hexo.<br>安装hexo-deploy-git后，created a lockfile as package-lock.json. You should commit this file。<br>这是npm模仿yarn的版本锁定，可以还原开发环境。</p>
+    <section class="markdown-content"><ul>
+<li><code>--debug</code>会生成debug.txt<del>,记录一些无聊的东西</del></li>
+</ul>
+<h3 id="hexo-js是从哪里开始加载的？"><a href="#hexo-js是从哪里开始加载的？" class="headerlink" title="hexo.js是从哪里开始加载的？"></a>hexo.js是从哪里开始加载的？</h3><p>我不得不对此感到疑惑？<br>hexo命令不显示hexo.js中的console.log!!!与<code>node debug ./node_modules/hexo/bin/hexo g</code>略有不同<br>hexo.js完成的任务主要有new Hexo(),init(),exit().</p>
+<h2 id="配置hexo"><a href="#配置hexo" class="headerlink" title="配置hexo."></a>配置hexo.</h2><ul>
+<li>hexo init即可快速开始一个库，如果仅仅是调试的话用他就够了。<br>安装hexo-deployer-git后，created a lockfile as package-lock.json. You should commit this file。<br>这是npm模仿yarn的版本锁定，可以还原开发环境。</li>
+<li>创建next这样的子目录时，需要同时修改url和root，按照提示即可</li>
+</ul>
 <ul>
 <li>当我把config中的url的root设为空时，<code>Cannot read property &#39;replace&#39; of null</code>hexo\lib\hexo\load_config.js:34:30.原来是这玩意儿在解释YHML，加载配置。</li>
 <li>github显示还是benleie在提交这个项目？？<br>修改config的用户名解决</li>
-<li>如何设置url的root，让它成功到blog目录？？<br>新建一个库,开启github pages即可。<h3 id="问题很多"><a href="#问题很多" class="headerlink" title="问题很多"></a>问题很多</h3></li>
+<li>如何设置url的root，让它成功到blog目录？？<br>新建一个库,开启github pages,然后将blog加到url和root后面<h3 id="问题很多"><a href="#问题很多" class="headerlink" title="问题很多"></a>问题很多</h3></li>
 </ul>
 <ul>
 <li>hexo加载了hexo-renderer-stylus模块来编译CSS，但是yilia使用了SCSS??</li>
@@ -188,7 +195,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#问题很多"><span class="toc-nav-text">问题很多</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#hexo-js是从哪里开始加载的？"><span class="toc-nav-text">hexo.js是从哪里开始加载的？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置hexo"><span class="toc-nav-text">配置hexo.</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#问题很多"><span class="toc-nav-text">问题很多</span></a></li></ol>
     
   </div>
 </aside>

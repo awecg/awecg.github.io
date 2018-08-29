@@ -113,7 +113,7 @@
 
     <div id="article-banner">
   <h2></h2>
-  <p class="post-date">2018-01-16</p>
+  <p class="post-date">2018-01-19</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,7 +121,19 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content">+ extend方法 拷贝对象
+    <section class="markdown-content"><h3 id="debug模式"><a href="#debug模式" class="headerlink" title="debug模式"></a>debug模式</h3><ul>
+<li>backtrace, bt - Print backtrace of current execution frame显示调用栈，不包括require</li>
+<li>restart 快速重启</li>
+<li>repl 交互式</li>
+<li>c继续</li>
+</ul>
+<ul>
+<li>module.exports与exports<br>exports.camelCaseKeys = require(‘./camel_case_keys’);<br>module.exports = entry;</li>
+</ul>
+<h2 id="require-resolve"><a href="#require-resolve" class="headerlink" title="require.resolve"></a>require.resolve</h2><ul>
+<li><code>fs.readFileSync(path.join(__dirname, &#39;./assets/some-file.txt&#39;));</code>等同于<code>fs.readFileSync(require.resolve(&#39;./assets/some-file.txt&#39;));</code></li>
+<li>省略了一道检查文件是否存在的工序 (fs.exists).</li>
+</ul>
 </section>
     <!-- Tags START -->
     
@@ -167,7 +179,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="nav">none</ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#debug模式"><span class="toc-nav-text">debug模式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#require-resolve"><span class="toc-nav-text">require.resolve</span></a>
     
   </div>
 </aside>
@@ -177,7 +189,7 @@
 
 <script>
   (function () {
-    var url = '//awecg.github.io/blog/2018/01/16/js/jquery/';
+    var url = '//awecg.github.io/blog/2018/01/19/node/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
